@@ -5,22 +5,28 @@ function preload() {
 }
 
 function setup() {
+  // testImg = new Array(img.width);
+  // for (let i = 0; i < testImg.length; i++) testImg[i] = new Array(img.height);
   testImg = createImage(img.width, img.height);
   createCanvas(700, 700);
   pixelDensity(1);
-  // img.loadPixels();
-  // testImg.loadPixels();
-  // for (let y = 0; y < testImg.pixels.length; y++) {
-  //   testImg.pixels[y] = img.pixels[y];
-  // }
-  testImg = img.get();
-  // testImg.updatePixels();
+  img.loadPixels();
+  testImg.loadPixels();
+  for (let i = 0; i < img.width; i++) {
+    for (let j = 0; j < img.height; j++) {
+      testImg.set(i, j, color(img.get(i, j)));
+    }
+  }
+  testImg.updatePixels();
 }
-
+let x = 0,
+  y = 0;
 function draw() {
   background(10);
-  // image(img, 0, 0);
-  // translate(width / 2, height / 2);
-
+  noStroke();
+  fill(testImg.get(x, y));
+  circle(x, y, 50);
+  x++;
+  y++;
   image(testImg, 0, 0);
 }
