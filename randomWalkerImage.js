@@ -23,10 +23,10 @@ class Walker {
   }
 
   moveWalker() {
-    // if (this.x < 0 || this.x > width) {
-    //   this.X *= -1;
-    //   this.xSpeed *= -1;
-    // }
+    if (this.x < 0 || this.x > width) {
+      this.X *= -1;
+      this.xSpeed *= -1;
+    }
     if (this.y < 0 || this.y > height) {
       this.Y *= -1;
       this.ySpeed *= -1;
