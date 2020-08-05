@@ -1,3 +1,5 @@
+// add sanya.jpg in the same folder as the code file
+
 let snowflakes = []; // array to hold snowflake objects
 let img;
 function preload() {
